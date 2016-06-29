@@ -24,6 +24,7 @@ class MediaController : HttpResponseDelegate, CacheReleaseDelegate {
             collectionCacheManager =  CacheManager<UIImage>(capacity: Olimpo.MAX_CAPACITY_VALUE, cacheRelease: self);
         }
         if action.url != nil {
+            action.applyContentModeTo(imageView);
             imageView.image = action.placeHolder != nil ? action.placeHolder! : nil;
             imageViewMap[imageView] = action.url!;
             mediaCachingMap[action.url!] = action;
@@ -36,6 +37,7 @@ class MediaController : HttpResponseDelegate, CacheReleaseDelegate {
             for (imageView,url) in self.imageViewMap {
                 if url == action.url {
                     dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        action.applyContentModeTo(imageView);
                         imageView.image = self.collectionCacheManager?.getKeyPairValue(key);
                         
                     };
@@ -50,6 +52,7 @@ class MediaController : HttpResponseDelegate, CacheReleaseDelegate {
             for (imageView,url) in self.imageViewMap {
                 if url == action.url {
                     dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        action.applyContentModeTo(imageView);
                         imageView.image = action.error != nil ? action.error : nil;
                     };
                 }
@@ -60,16 +63,19 @@ class MediaController : HttpResponseDelegate, CacheReleaseDelegate {
     //Changes imageview's image with given key(url) value
     func changeImageInImageView(imageView:UIImageView, key:String){
         imageViewMap[imageView] = key;
-        if let image = self.collectionCacheManager?.getKeyPairValue(key) {
-            imageView.image = image;
-        }else{
-            let action = mediaCachingMap[key];
-            imageView.image = action?.placeHolder != nil ? action?.placeHolder! : nil;
+        if let action = mediaCachingMap[key] {
+            action.applyContentModeTo(imageView);
+            if let image = self.collectionCacheManager?.getKeyPairValue(key) {
+                imageView.image = image;
+            }else{
+                action.applyContentModeTo(imageView);
+                imageView.image = action.placeHolder != nil ? action.placeHolder! : nil;
+            }
         }
     }
     
     func isCacheContains(action:Action) -> Bool {
-        return mediaCachingMap[action.url!] != nil ;
+        return mediaCachingMap[action.url!] != nil &&  collectionCacheManager!.getKeyPairValue(action.url!) != nil;
     }
     
     //Changes action according to given action url
@@ -87,8 +93,7 @@ class MediaController : HttpResponseDelegate, CacheReleaseDelegate {
                     if self.collectionCacheManager != nil {
                         self.collectionCacheManager!.cacheNewItem(url.absoluteString, value: image);
                         self.nofityImageView(url.absoluteString);
-                    }
-                    
+                    } 
                 }
             });
             

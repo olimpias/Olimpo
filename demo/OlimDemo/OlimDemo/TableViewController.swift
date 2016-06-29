@@ -79,13 +79,13 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tableViewCell", forIndexPath: indexPath) as! TableViewCell;
         let index = indexPath.row;
-        Olimpo.load(urlArray[index]).into(cell.sectionImageView);
+        Olimpo.load(urlArray[index]).placeHolder(UIImage(named: "load")!).error(UIImage(named: "error")!).into(cell.sectionImageView);
         cell.sectionLabel.text = "Row number is \(index)";
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80;
+        return 90;
     }
 
     /*

@@ -59,6 +59,11 @@ class Olimpo  {
             return self;
         }
         
+        func contentMode(mode:UIViewContentMode) -> ActionBuilder {
+            action.imageViewContentMode = mode;
+            return self;
+        }
+        
         private func url(url:String) -> ActionBuilder {
             action.url = url;
             return self;

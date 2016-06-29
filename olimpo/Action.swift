@@ -13,7 +13,15 @@ class Action {
     var url:String?;
     var placeHolder:UIImage?;
     var error:UIImage?;
+    var imageViewContentMode:UIViewContentMode?;
+    
     init(){
         
+    }
+    
+    func applyContentModeTo(imageView:UIImageView) {
+        if imageViewContentMode != nil {
+            imageView.contentMode = imageViewContentMode!;
+        }
     }
 }
