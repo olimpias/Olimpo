@@ -16,7 +16,7 @@ To see how does it work with TableView, check out olimpoDemo project.
 
 ## TODO
 
-Scaling options for downloaded image
+Scaling options for downloaded image<br />
 Making caching machanism more dynamic
 
 
