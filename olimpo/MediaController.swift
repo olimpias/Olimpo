@@ -89,8 +89,13 @@ class MediaController : HttpResponseDelegate, CacheReleaseDelegate {
     func httpRequestFinishedWithSuccess(data:NSData?, url:NSURL){
         if data != nil {
             dispatch_async(backgroundQueue, { () -> Void in
-                if let image = UIImage(data: data!) {
+                if var image = UIImage(data: data!) {
                     if self.collectionCacheManager != nil {
+                        if let action  = self.mediaCachingMap[url.absoluteString] {
+                            if action.newSize != nil {
+                                image = Utils.resizeImage(image, newSize: action.newSize!);
+                            }
+                        }
                         self.collectionCacheManager!.cacheNewItem(url.absoluteString, value: image);
                         self.nofityImageView(url.absoluteString);
                     } 

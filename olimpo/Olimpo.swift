@@ -64,6 +64,13 @@ class Olimpo  {
             return self;
         }
         
+        ///Resize image.
+        ///When reSize method is used, contentMode is recommmended to set , because you might not experience affects of resizing on image.
+        func reSize(height:CGFloat,width:CGFloat) -> ActionBuilder {
+            action.newSize = CGSize(width: width, height: height);
+            return self;
+        }
+        
         private func url(url:String) -> ActionBuilder {
             action.url = url;
             return self;

@@ -14,7 +14,7 @@ class Action {
     var placeHolder:UIImage?;
     var error:UIImage?;
     var imageViewContentMode:UIViewContentMode?;
-    
+    var newSize:CGSize?;
     init(){
         
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8842A87F1D2582C700328541 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842A87E1D2582C700328541 /* Utils.swift */; };
 		8853C9AE1D22FD4100286B7F /* olimpo.h in Headers */ = {isa = PBXBuildFile; fileRef = 8853C9AD1D22FD4100286B7F /* olimpo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8853C9B51D22FD4100286B7F /* olimpo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8853C9AA1D22FD4100286B7F /* olimpo.framework */; };
 		8853C9BA1D22FD4100286B7F /* olimpoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853C9B91D22FD4100286B7F /* olimpoTests.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8842A87E1D2582C700328541 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8853C9AA1D22FD4100286B7F /* olimpo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = olimpo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8853C9AD1D22FD4100286B7F /* olimpo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = olimpo.h; sourceTree = "<group>"; };
 		8853C9AF1D22FD4100286B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				8853C9CE1D22FECB00286B7F /* HttpResponseDelegate.swift */,
 				8853C9D01D22FEE000286B7F /* NetworkManager.swift */,
 				8853C9D21D22FEFA00286B7F /* Olimpo.swift */,
+				8842A87E1D2582C700328541 /* Utils.swift */,
 			);
 			path = olimpo;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			files = (
 				8853C9C91D22FE8C00286B7F /* CacheReleaseDelegate.swift in Sources */,
 				8853C9C71D22FE7400286B7F /* CacheManager.swift in Sources */,
+				8842A87F1D2582C700328541 /* Utils.swift in Sources */,
 				8853C9CB1D22FEA000286B7F /* NetworkRequest.swift in Sources */,
 				8853C9D11D22FEE000286B7F /* NetworkManager.swift in Sources */,
 				8853C9C51D22FE5700286B7F /* Action.swift in Sources */,
@@ -415,6 +419,7 @@
 				8853C9C01D22FD4100286B7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8853C9C11D22FD4100286B7F /* Build configuration list for PBXNativeTarget "olimpoTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +428,7 @@
 				8853C9C31D22FD4100286B7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -22,6 +22,7 @@
 		88AB78211D230ABB004F5EEA /* Olimpo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB78191D230ABB004F5EEA /* Olimpo.swift */; };
 		88AB78241D230B4D004F5EEA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB78231D230B4D004F5EEA /* TableViewController.swift */; };
 		88AB78261D230C1B004F5EEA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB78251D230C1B004F5EEA /* TableViewCell.swift */; };
+		88F007441D2587E7004A123F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F007431D2587E7004A123F /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		88AB78191D230ABB004F5EEA /* Olimpo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Olimpo.swift; path = ../../olimpo/Olimpo.swift; sourceTree = "<group>"; };
 		88AB78231D230B4D004F5EEA /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		88AB78251D230C1B004F5EEA /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		88F007431D2587E7004A123F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = ../../olimpo/Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		88AB78221D230AC0004F5EEA /* Olim */ = {
 			isa = PBXGroup;
 			children = (
+				88F007431D2587E7004A123F /* Utils.swift */,
 				88AB78121D230ABB004F5EEA /* Action.swift */,
 				88AB78131D230ABB004F5EEA /* CacheManager.swift */,
 				88AB78141D230ABB004F5EEA /* CacheReleaseDelegate.swift */,
@@ -232,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88F007441D2587E7004A123F /* Utils.swift in Sources */,
 				88AB781A1D230ABB004F5EEA /* Action.swift in Sources */,
 				88AB781B1D230ABB004F5EEA /* CacheManager.swift in Sources */,
 				88AB781C1D230ABB004F5EEA /* CacheReleaseDelegate.swift in Sources */,
